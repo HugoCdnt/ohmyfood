@@ -1,4 +1,43 @@
 @charset "UTF-8";
+@keyframes opacityBody {
+  0% {
+    opacity: 0.3;
+    z-index: -1000;
+  }
+  100% {
+    opacity: 1;
+    z-index: 1000;
+  }
+}
+@keyframes loader3 {
+  100% {
+    opacity: 0;
+    z-index: -1000;
+  }
+}
+@keyframes loader3__item {
+  0% {
+    transform: translateY(0) rotate(-360deg);
+  }
+  25% {
+    transform: translateY(1rem);
+  }
+  75% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slidein {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 a {
   text-decoration: none;
   color: black;
@@ -14,20 +53,96 @@ h1 {
   font-size: 35px;
   letter-spacing: 1px;
   width: 100%;
-  /*text-align: left;*/
   margin: 0;
 }
 
-@keyframes opacityBody {
-  0% {
-    opacity: 0.3;
-    z-index: -1000;
-  }
-  100% {
-    opacity: 1;
-    z-index: 1000;
-  }
+h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-block-start: 0;
 }
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  margin-block-start: 0;
+}
+
+h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+p {
+  font-size: 0.9em;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.button__action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  height: 3rem;
+  width: 220px;
+  margin-top: 1.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 0;
+  box-shadow: 0px 3px 8px grey;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.button__action:hover {
+  opacity: 0.85;
+  box-shadow: 0px 5px 15px grey;
+  transition: 0.4s;
+}
+.button__action:not(:hover) {
+  transition: 0.4s;
+}
+
+.heart {
+  font-size: 1.5rem;
+}
+.heart:hover {
+  position: relative;
+  cursor: pointer;
+}
+.heart:hover .heart--anim {
+  z-index: 1;
+  transform: scale(1.1);
+}
+.heart:hover:not(:hover) .heart--anim {
+  transform-origin: top;
+  transition: transform 300ms;
+}
+.heart--anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: -webkit-linear-gradient(#9356DC, hsl(267.3134328358deg, 100%, 96%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 300ms;
+}
+.heart--anim:hover {
+  z-index: 1;
+  transform: scale(1);
+}
+
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
@@ -163,117 +278,6 @@ body {
   color: #99E2D0;
 }
 
-@keyframes loader3 {
-  100% {
-    opacity: 0;
-    z-index: -1000;
-  }
-}
-@keyframes loader3__item {
-  0% {
-    transform: translateY(0) rotate(-360deg);
-  }
-  25% {
-    transform: translateY(1rem);
-  }
-  75% {
-    transform: translateY(-1rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-h2 {
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-bottom: 0;
-  margin-block-start: 0;
-}
-
-h3 {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-  margin-block-start: 0;
-}
-
-h4 {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-p {
-  font-size: 0.9em;
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-.button__action {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 25px;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  height: 3rem;
-  width: 220px;
-  margin-top: 1.5rem;
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  border: 0;
-  box-shadow: 0px 3px 8px grey;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-}
-.button__action:hover {
-  opacity: 0.85;
-  box-shadow: 0px 5px 15px grey;
-  transition: 0.4s;
-}
-.button__action:not(:hover) {
-  transition: 0.4s;
-}
-
-/**** ESSAI EN CE QUI CONCERNE LE REMPLISSAGE DES COEURS **/
-/*.pin-heart{
-    position: relative;
-}*/
-.heart {
-  font-size: 1.5rem;
-}
-.heart:hover {
-  position: relative;
-  cursor: pointer;
-}
-.heart:hover .heart--anim {
-  z-index: 1;
-  transform: scale(1.1);
-}
-.heart:hover:not(:hover) .heart--anim {
-  transform-origin: top;
-  transition: transform 300ms;
-}
-.heart--anim {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: -webkit-linear-gradient(#9356DC, hsl(267.3134328358deg, 100%, 96%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: -1;
-  transform: scale(0);
-  transform-origin: center;
-  transition: transform 300ms;
-}
-.heart--anim:hover {
-  z-index: 1;
-  transform: scale(1);
-}
-
 .menu-prev:nth-child(2) .heading {
   animation: slidein;
   animation-duration: 1s;
@@ -316,15 +320,6 @@ p {
   animation-delay: 0.75s;
 }
 
-@keyframes slidein {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /******* HEADER *******/
 header {
   box-shadow: 0px 2px 4px #c5c5c5;
@@ -612,6 +607,47 @@ footer .picto-footer {
   flex-flow: column wrap;
   width: 100%;
 }
+.page-menu .menu-prev:nth-child(2) .heading {
+  animation: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.page-menu .menu-prev:nth-child(2) article {
+  animation: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 0.25s;
+}
+.page-menu .menu-prev:nth-child(3) .heading {
+  animation: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 0.25s;
+}
+.page-menu .menu-prev:nth-child(3) article {
+  animation: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+.page-menu .menu-prev:nth-child(4) .heading {
+  animation: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+.page-menu .menu-prev:nth-child(4) article {
+  animation: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 0.75s;
+}
 .page-menu .menu-prev > .heading {
   margin-top: 2.5rem;
   margin-bottom: 1.8rem;
@@ -774,14 +810,11 @@ footer .picto-footer {
   }
 
   .tuto {
-    /*margin: 30px auto 30px auto;*/
     width: 90%;
     align-items: center;
     justify-content: left;
-    /*justify-items: left;*/
   }
   .tuto .tuto-list {
-    /*padding: 0;*/
     width: 97%;
     margin-right: auto;
     margin-left: 3%;
@@ -855,19 +888,6 @@ footer .picto-footer {
 
   /******* PAGES MENU *******/
   /*** HEADER ***/
-  /*
-      .header-restaurant{
-          @include flex-centre(row);
-
-          >.back__link{
-              position: absolute;
-              cursor: pointer;
-              display: flex;
-              align-items: center;
-              left: 8%;
-          }
-      }
-  */
   .page-menu {
     display: flex;
     flex-direction: column;
@@ -930,23 +950,10 @@ footer .picto-footer {
     margin-bottom: 1rem;
   }
   .page-menu .menu-overview .menu-prev .card-small .card-small--texte {
-    /*height: 100%;*/
-    /*width: 90%;*/
     display: flex;
     flex-direction: column;
   }
 }
-/*.menu-prev{
-    display: flex;
-    flex-direction: column;
-}*/
-/*.menu--heading .fa-heart{
-    font-size: 1.5em;
-}*/
-/*.card-small--price{
-    /*height: 100%;
-    /*width: 10%;
-}*/
 /********** TABLETTE DISPLAY **********/
 @media screen and (max-width: 991px) and (min-width: 768px) {
   .menu {
@@ -979,54 +986,54 @@ footer .picto-footer {
     padding: 0;
     width: 50%;
     counter-reset: ListCount;
+    /*.tuto-list li{
+        @include rounded(15px);
+        padding: 1.5rem 0 1.5rem 2rem;
+        box-shadow: 0px 4px 8px #c5c5c5;
+        position: relative;
+        >span{
+            font-weight: bold;
+        }
+    }
+
+    .tuto-list li:nth-child(3){
+        color: black;
+        background: pastel($primary-color);
+
+        >i{
+            color: $primary-color;
+        }
+    }
+
+    .tuto-list li::before{
+        counter-increment: ListCount 1; 
+        content: counter(ListCount);
+        background: $primary-color;
+        color: white;
+        padding: 0.3rem 0.5rem;
+        border-radius: 25px;
+        position: absolute;
+        text-align: center;
+        left: -0.5rem;
+        top: 1.2rem;
+        //width: 1.5rem;
+        height: 1.5rem;
+        //left: 10px;
+        top: 20px;
+        width: 20px;
+        height: 40px;
+    }*/
   }
   .tuto .tuto-list .tuto-list i {
     width: 20px;
     margin-right: 10px;
     text-align: center;
   }
-  .tuto .tuto-list .tuto-list li {
-    border-radius: 15px;
-    padding: 1.5rem 0 1.5rem 2rem;
-    box-shadow: 0px 4px 8px #c5c5c5;
-    position: relative;
-  }
-  .tuto .tuto-list .tuto-list li > span {
-    font-weight: bold;
-  }
-  .tuto .tuto-list .tuto-list li:nth-child(3) {
-    color: black;
-    background: hsl(267.3134328358deg, 100%, 96%);
-  }
-  .tuto .tuto-list .tuto-list li:nth-child(3) > i {
-    color: #9356DC;
-  }
-  .tuto .tuto-list .tuto-list li::before {
-    counter-increment: ListCount 1;
-    content: counter(ListCount);
-    background: #9356DC;
-    color: white;
-    padding: 0.3rem 0.5rem;
-    border-radius: 25px;
-    position: absolute;
-    text-align: center;
-    left: -0.5rem;
-    top: 1.2rem;
-    /*width: 1.5rem;
-    height: 1.5rem;*/
-    /*left: 10px;
-    top: 20px;
-    width: 20px;
-    height: 40px;*/
-  }
 
   /******* MAIN *******/
   .restaurants-overview {
     width: 100%;
     height: 700px;
-    /*@include flex-centre(row);
-    flex-wrap: wrap;
-    justify-content: space-between;*/
     display: flex;
     flex-direction: column;
     padding: 0% 5%;
@@ -1042,12 +1049,6 @@ footer .picto-footer {
     justify-content: space-between;
     flex-wrap: wrap;
     box-sizing: border-box;
-    /*display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-content: center;
-    justify-items: center;
-    justify-content: space-evenly;*/
   }
   .restaurants-overview .restaurants-list .card-tall {
     border-radius: 20px;
@@ -1068,7 +1069,6 @@ footer .picto-footer {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     width: 100%;
-    /*height: 70%;*/
     object-fit: cover;
   }
   .restaurants-overview .restaurants-list .card-tall a .badge__new {
@@ -1079,8 +1079,6 @@ footer .picto-footer {
     font-weight: bold;
     color: #2c9c81;
     background: #99E2D0;
-    /*width: 70px;
-    height: 30px;*/
     font-weight: bold;
     font-size: 0.9em;
     border-radius: 2px;
@@ -1120,14 +1118,6 @@ footer .picto-footer {
   .page-menu {
     display: flex;
     flex-direction: column;
-    /**** Classe à retravailler et concaténer avec H1 **/
-    /*.menu-prev{
-        display: flex;
-        flex-direction: column;
-    }*/
-    /*.menu--heading .fa-heart{
-        font-size: 1.5em;
-    }*/
   }
   .page-menu > img {
     width: 100%;
@@ -1148,7 +1138,6 @@ footer .picto-footer {
   }
   .page-menu .menu-overview .menu--heading {
     display: flex;
-    /*justify-content: space-between;*/
     align-items: baseline;
     padding: 5% 0% 0% 0%;
     font-family: "Shrikhand", cursive;
@@ -1179,7 +1168,6 @@ footer .picto-footer {
     background-color: #99E2D0;
     position: absolute;
     left: 0;
-    /*transform: translateX(40%);*/
     margin-top: 1.5rem;
   }
   .page-menu .menu-overview .menu-prev .card-small {
@@ -1274,14 +1262,6 @@ footer .picto-footer {
   .page-menu {
     display: flex;
     flex-direction: column;
-    /**** Classe à retravailler et concaténer avec H1 **/
-    /*.menu-prev{
-        display: flex;
-        flex-direction: column;
-    }*/
-    /*.menu--heading .fa-heart{
-        font-size: 1.5em;
-    }*/
   }
   .page-menu > img {
     width: 100%;
@@ -1300,7 +1280,6 @@ footer .picto-footer {
   }
   .page-menu .menu-overview .menu--heading {
     display: flex;
-    /*justify-content: space-between;*/
     align-items: baseline;
     padding: 5% 5% 0% 0%;
     font-family: "Shrikhand", cursive;
@@ -1322,7 +1301,6 @@ footer .picto-footer {
     margin-bottom: 1.8rem;
     text-transform: uppercase;
     width: 100%;
-    /*text-align: center;*/
     position: relative;
   }
   .page-menu .menu-overview .menu-prev > .heading::after {
@@ -1333,7 +1311,6 @@ footer .picto-footer {
     background-color: #99E2D0;
     position: absolute;
     left: 0;
-    /*transform: translateX(40%);*/
     margin-top: 1.5rem;
   }
   .page-menu .menu-overview .menu-prev .card-small {
