@@ -6,6 +6,7 @@ a {
 
 .heading {
   width: 100%;
+  margin: 1rem 0;
 }
 
 h1 {
@@ -185,6 +186,8 @@ body {
 h2 {
   font-size: 1.3em;
   font-weight: bold;
+  margin-bottom: 0;
+  margin-block-start: 0;
 }
 
 h3 {
@@ -459,6 +462,9 @@ header .logo {
   justify-content: space-evenly;*/
   background-color: #F2F2F2;
 }
+.restaurants-overview .heading {
+  margin-bottom: 0;
+}
 .restaurants-overview .restaurants-list .card-tall {
   border-radius: 20px;
   position: relative;
@@ -482,6 +488,8 @@ header .logo {
 .restaurants-overview .restaurants-list .card-tall a .badge__new {
   display: flex;
   position: absolute;
+  width: 70px;
+  height: 30px;
   top: 8%;
   right: 5%;
   font-weight: bold;
@@ -521,6 +529,7 @@ footer .logo--white {
   font-family: "Shrikhand", cursive;
   color: white;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 footer ul {
   padding: 0;
@@ -554,7 +563,8 @@ footer .picto-footer {
   justify-content: center;
   background-color: white;
   z-index: 1000;
-  position: relative;
+  position: sticky;
+  box-shadow: none;
 }
 .header-restaurant .back__link {
   position: absolute;
@@ -783,9 +793,12 @@ footer .picto-footer {
     height: 1100px;
     padding: 5%;
   }
+  .restaurants-overview .heading {
+    margin-top: 1rem;
+  }
   .restaurants-overview .restaurants-list {
     width: 100%;
-    height: 95%;
+    height: 98%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -866,7 +879,7 @@ footer .picto-footer {
   }
   .page-menu .menu-overview {
     flex-direction: column;
-    padding: 0% 5% 20% 5%;
+    padding: 8% 5% 15% 5%;
     margin-top: -50px;
     background-color: #F2F2F2;
     border-top-left-radius: 45px;
@@ -975,7 +988,6 @@ footer .picto-footer {
   .tuto .tuto-list .tuto-list li {
     border-radius: 15px;
     padding: 1.5rem 0 1.5rem 2rem;
-    margin-bottom: 1.5rem;
     box-shadow: 0px 4px 8px #c5c5c5;
     position: relative;
   }
@@ -1128,7 +1140,7 @@ footer .picto-footer {
     width: 100%;
     box-sizing: border-box;
     justify-content: space-between;
-    padding: 0% 5% 10% 5%;
+    padding: 3% 5% 0% 5%;
     margin-top: -50px;
     background-color: #F2F2F2;
     border-top-left-radius: 45px;
@@ -1150,7 +1162,7 @@ footer .picto-footer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin-bottom: 3%;
+    margin-bottom: 0;
   }
   .page-menu .menu-overview .menu-prev > .heading {
     margin-top: 2.5rem;
@@ -1193,6 +1205,10 @@ footer .picto-footer {
   }
   .page-menu .menu-overview .button__action-container {
     width: 100%;
+    margin: 7% 0 8%;
+  }
+  .page-menu .menu-overview .button__action-container .button__action {
+    margin-top: 0;
   }
 }
 /********** DESKTOP DISPLAY **********/
@@ -1221,7 +1237,10 @@ footer .picto-footer {
 
   /******* MAIN *******/
   .restaurants-overview {
-    padding: 0 5%;
+    padding: 2% 5% 0% 5%;
+  }
+  .restaurants-overview .heading {
+    margin-bottom: 1rem;
   }
   .restaurants-overview .restaurants-list {
     display: flex;
@@ -1273,7 +1292,7 @@ footer .picto-footer {
     flex-flow: row wrap;
     align-content: center;
     justify-content: space-between;
-    padding: 0% 5% 10% 5%;
+    padding: 0% 5% 5% 5%;
     margin-top: -50px;
     background-color: #F2F2F2;
     border-top-left-radius: 45px;
@@ -1339,6 +1358,9 @@ footer .picto-footer {
   }
   .page-menu .menu-overview .button__action-container {
     width: 100%;
+  }
+  .page-menu .menu-overview .button__action-container .button__action {
+    margin-top: 1.5%;
   }
 }
 
