@@ -524,11 +524,11 @@ header{
                     height: 30px;
                     top: 8%;
                     right: 5%;
-                    font-weight: bold;
+                    //font-weight: bold;
                     color: darken($third-color, 35%);
                     background: $third-color;
                     font-weight: bold;
-                    font-size: 0.9em;
+                    font-size: .8rem;
                     border-radius: 2px;
                     align-items: center;
                     justify-content: center;    
@@ -1554,7 +1554,7 @@ footer{
                 .button__action{
                     margin-top: 1.5%;
                 }
-                
+
             }
 
         }
