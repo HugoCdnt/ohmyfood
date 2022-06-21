@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @keyframes opacityBody {
   0% {
-    opacity: 0.3;
+    opacity: 0;
     z-index: -1000;
   }
   100% {
@@ -17,16 +17,16 @@
 }
 @keyframes loader3__item {
   0% {
-    transform: translateY(0) rotate(-360deg);
+    transform: translateY(0) rotate(0);
   }
   25% {
     transform: translateY(1rem);
   }
   75% {
-    transform: translateY(-1rem);
+    transform: translateY(-1rem) rotate(0);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(-360deg);
   }
 }
 @keyframes slidein {
@@ -158,7 +158,7 @@ body {
 }
 
 .loader3 {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   min-height: 100vh;
   display: flex;
