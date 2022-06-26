@@ -442,15 +442,8 @@ header .logo {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  /*padding: 5%;*/
   box-sizing: border-box;
   margin: auto;
-  /*display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-content: center;
-  justify-items: center;
-  justify-content: space-evenly;*/
   background-color: #F2F2F2;
 }
 .restaurants-overview .heading {
@@ -586,7 +579,6 @@ footer .picto-footer {
 .page-menu .menu-overview .menu__heading {
   width: 100%;
   display: flex;
-  /*justify-content: space-between;*/
   align-items: baseline;
   padding: 5% 5% 0% 0%;
   font-family: "Shrikhand", cursive;
@@ -981,43 +973,6 @@ footer .picto-footer {
     padding: 0;
     width: 50%;
     counter-reset: ListCount;
-    /*.tuto-list li{
-        @include rounded(15px);
-        padding: 1.5rem 0 1.5rem 2rem;
-        box-shadow: 0px 4px 8px #c5c5c5;
-        position: relative;
-        >span{
-            font-weight: bold;
-        }
-    }
-
-    .tuto-list li:nth-child(3){
-        color: black;
-        background: pastel($primary-color);
-
-        >i{
-            color: $primary-color;
-        }
-    }
-
-    .tuto-list li::before{
-        counter-increment: ListCount 1; 
-        content: counter(ListCount);
-        background: $primary-color;
-        color: white;
-        padding: 0.3rem 0.5rem;
-        border-radius: 25px;
-        position: absolute;
-        text-align: center;
-        left: -0.5rem;
-        top: 1.2rem;
-        //width: 1.5rem;
-        height: 1.5rem;
-        //left: 10px;
-        top: 20px;
-        width: 20px;
-        height: 40px;
-    }*/
   }
   .tuto .tuto-list .tuto-list i {
     width: 20px;
