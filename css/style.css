@@ -137,10 +137,6 @@ p {
   transform-origin: center;
   transition: transform 300ms;
 }
-.heart--anim:hover {
-  z-index: 1;
-  transform: scale(1);
-}
 
 body {
   margin: 0;
